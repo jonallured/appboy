@@ -29,4 +29,12 @@ FactoryGirl.define do
 
     initialize_with { attributes }
   end
+
+  factory :user, class: Hash do
+    first_name 'John'
+    last_name 'Doe'
+    email 'john@example.com'
+
+    initialize_with { attributes }
+  end
 end

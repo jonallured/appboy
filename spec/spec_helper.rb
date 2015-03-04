@@ -8,6 +8,7 @@ Dotenv.load
 require 'appboy'
 require 'support/vcr'
 require 'support/factory_girl'
+require 'support/rest'
 require 'support/integrations'
 
 RSpec.configure do |config|

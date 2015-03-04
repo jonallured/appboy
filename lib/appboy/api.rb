@@ -14,13 +14,18 @@ module Appboy
     include Appboy::Endpoints::EmailStatus
 
     def export_users(**payload)
-      Appboy::REST::ExportUsers.new.perform(app_group_id, payload)
+      Appboy::REST::ExportUsers.new(self).perform(payload)
     end
 
     attr_reader :app_group_id
+    attr_writer :user_resource
 
     def initialize(app_group_id)
       @app_group_id = app_group_id
+    end
+
+    def user_resource
+      @user_resource ||= Appboy::Resource::User.new
     end
   end
 end

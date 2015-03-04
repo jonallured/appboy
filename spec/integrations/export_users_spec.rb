@@ -6,8 +6,8 @@ describe 'export users' do
   end
 
   context 'with success', vcr: true do
-    it 'responds with created' do
-      expect(export_users.status).to be 201
+    it 'responds with a user object' do
+      expect(export_users).to be_an_instance_of(Appboy::Resource::User)
     end
   end
 

@@ -1,0 +1,1 @@
+require 'appboy/resource/user'
