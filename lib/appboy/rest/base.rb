@@ -10,7 +10,13 @@ module Appboy
         @api = api
       end
 
+      def unwrapped_response
+        JSON.parse(response.body).values.first.flatten
+      end
+
       private
+
+      attr_reader :response
 
       def http
         @http ||= Appboy::HTTP.new

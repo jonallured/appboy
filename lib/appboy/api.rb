@@ -18,14 +18,14 @@ module Appboy
     end
 
     attr_reader :app_group_id
-    attr_writer :user_resource
+    attr_writer :user_resource_class
 
     def initialize(app_group_id)
       @app_group_id = app_group_id
     end
 
-    def user_resource
-      @user_resource ||= Appboy::Resource::User.new
+    def user_resource_class
+      @user_resource_class ||= Appboy::Resource::User
     end
   end
 end

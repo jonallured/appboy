@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Appboy::REST::ExportUsers do
   let(:payload) {{ external_ids: :external_ids }}
-  let(:response) { double(body: build(:user).to_json) }
+  let(:response) { double(body: { users: [build(:user)] }.to_json) }
 
   before { allow(http).to receive(:post).and_return(response) }
 
@@ -13,7 +13,7 @@ describe Appboy::REST::ExportUsers do
   end
 
   describe 'user object response' do
-    subject(:user) { client.perform(payload) }
+    subject(:user) { client.perform(payload).first }
 
     it { expect(user.first_name).to eq 'John' }
     it { expect(user.last_name).to eq 'Doe' }

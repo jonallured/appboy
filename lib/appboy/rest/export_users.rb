@@ -2,17 +2,21 @@ module Appboy
   module REST
     class ExportUsers < Base
       def perform(external_ids:)
-        user.from_json response(external_ids).body
+        perform_request external_ids
+
+        unwrapped_response.map do |attributes|
+          resource_class.new.from_hash attributes
+        end
       end
 
       private
 
-      def user
-        api.user_resource
+      def resource_class
+        api.user_resource_class
       end
 
-      def response(external_ids)
-        http.post '/users/export/ids', {
+      def perform_request(external_ids)
+        @response ||= http.post '/users/export/ids', {
           app_group_id: api.app_group_id,
           external_ids: external_ids
         }
