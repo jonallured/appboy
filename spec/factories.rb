@@ -31,9 +31,17 @@ FactoryGirl.define do
   end
 
   factory :user, class: Hash do
+    external_id 1
     first_name 'John'
     last_name 'Doe'
     email 'john@example.com'
+    country 'CA'
+    language 'en'
+    gender 'M'
+    timezone 'Easter Time (US & Canada)'
+    total_revenue 10.0
+    push_subscribe 'opted_in'
+    email_subscribe 'subscribed'
 
     initialize_with { attributes }
   end

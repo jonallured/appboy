@@ -5,7 +5,7 @@ module Appboy
         perform_request external_ids
 
         unwrapped_response.map do |attributes|
-          resource_class.new.from_hash attributes
+          resource_class.new attributes
         end
       end
 

@@ -12,14 +12,6 @@ describe Appboy::REST::ExportUsers do
     client.perform payload
   end
 
-  describe 'user object response' do
-    subject(:user) { client.perform(payload).first }
-
-    it { expect(user.first_name).to eq 'John' }
-    it { expect(user.last_name).to eq 'Doe' }
-    it { expect(user.email).to eq 'john@example.com' }
-  end
-
   def arguments
     ['/users/export/ids', payload.merge({ app_group_id: :app_group_id })]
   end

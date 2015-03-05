@@ -1,1 +1,7 @@
+require 'appboy/resource/app'
+require 'appboy/resource/card'
+require 'appboy/resource/campaign'
+require 'appboy/resource/event'
+require 'appboy/resource/purchase'
+require 'appboy/resource/device'
 require 'appboy/resource/user'
