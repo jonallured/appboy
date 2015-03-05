@@ -1,20 +1,18 @@
 require 'spec_helper'
 
 describe Appboy::REST::ExportUsers do
-  let(:http) { double(:http) }
-
   let(:payload) {{ external_ids: :external_ids }}
+  let(:response) { double(body: { users: [build(:user)] }.to_json) }
 
-  let(:app_group_id) { :app_group_id }
-
-  subject { described_class.new }
-
-  before { subject.http = http }
+  before { allow(http).to receive(:post).and_return(response) }
 
   it 'makes an http call to the track user endpoint' do
-    expect(http).to receive(:post).with '/users/export/ids',
-        payload.merge({ app_group_id: :app_group_id })
+    expect(http).to receive(:post).with *arguments
 
-    subject.perform(app_group_id, payload)
+    client.perform payload
+  end
+
+  def arguments
+    ['/users/export/ids', payload.merge({ app_group_id: :app_group_id })]
   end
 end

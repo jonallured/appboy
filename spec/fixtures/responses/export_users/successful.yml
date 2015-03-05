@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.appboy.com/users/export/ids
+    body:
+      encoding: UTF-8
+      string: '{"app_group_id":"<APPBOY_GROUP_ID>","external_ids":[1]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx/1.6.2
+      Date:
+      - Tue, 03 Mar 2015 19:13:51 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"7812253cd4ced05813ae188a2e0173b6"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b4baa75c0a702ef23e0b78b855d9a73d
+      X-Runtime:
+      - '1.129610'
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"users":[{"external_id":"1","first_name":"John","last_name":"Doe","email":"john@example.com","dob":"1980-01-01","country":"CA","language":"en","gender":"M","time_zone":"Eastern Time (US & Canada)","total_revenue":10.0,"push_subscribe":"opted_in","email_subscribe":"subscribed","push_tokens":[],"custom_attributes":{"Confirmed":true,"Region":"Quebec, QC","Language":"fr"},"devices":[{"model":"iPhone 4","os":"iOS 7.1.2","carrier":"fido","idfv":"3376EF4B-4994-42F3-821D-D1A595B90155"}],"apps":[{"name":"Zweet Appraisal","platform":"iOS","version":"1.5.0","sessions":1473,"first_used":"2014-07-29T18:24:24Z","last_used":"2015-02-25T15:02:16Z"}],"custom_events":[{"name":"Button Tapped","first":"2014-07-29T18:24:29Z","last":"2015-02-19T02:06:06Z","count":67}],"campaigns_received":[{"name":"Test Regular","last_received":"2015-02-05T19:20:59Z"}],"cards_clicked":[{"name":"QA News Card"}],"purchases":[{"name":null,"first":"2015-02-15T00:23:08Z","last":"2015-02-20T03:34:55Z","count":25},{"name":null,"first":"2015-02-20T03:35:44Z","last":"2015-02-20T03:35:44Z","count":1}]}],"message":"success"}'
+    http_version:
+  recorded_at: Tue, 03 Mar 2015 19:13:52 GMT
+recorded_with: VCR 2.9.2
