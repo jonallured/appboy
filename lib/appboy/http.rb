@@ -4,13 +4,13 @@ require 'faraday_middleware'
 module Appboy
   class HTTP
     def post(path, payload)
-      connection.post path do |request|
+      connection.post(path) do |request|
         request.body = payload
-      end
+      end.body
     end
 
     def get(path, query)
-      connection.get path, query
+      connection.get(path, query).body
     end
 
     def connection

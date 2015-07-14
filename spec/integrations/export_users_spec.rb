@@ -6,7 +6,7 @@ describe 'export users' do
 
     context 'with success', :vcr do
       it 'responds with created' do
-        expect(export_users).to be_success
+        expect(export_users["message"]).to eq("success")
       end
     end
   end
@@ -20,7 +20,10 @@ describe 'export users' do
       end
 
       it 'responds with created' do
-        expect(export_users).to be_success
+        expect(export_users).to eq(
+          "url" => "https://appboy-data-export.s3.amazonaws.com/<REDACTED>.zip",
+          "message" => "success"
+        )
       end
     end
   end
