@@ -11,12 +11,8 @@ describe 'track users' do
   end
 
   context 'with success', vcr: true do
-    it 'responds with created' do
-      expect(track_users.status).to be 201
-    end
-
     it 'responds with success message' do
-      expect(JSON.parse(track_users.body)).to eq(
+      expect(track_users).to eq(
           'attributes_processed' => 1,
           'events_processed' => 1,
           'purchases_processed' => 1,
@@ -29,7 +25,7 @@ describe 'track users' do
     let(:app_group_id) { 'non-existent' }
 
     it 'responds with unauthorized' do
-      expect(track_users.status).to be 401
+      expect(track_users["message"]).to eq("Invalid or missing App Group API Identifier: non-existent")
     end
   end
 end

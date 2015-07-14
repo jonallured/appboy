@@ -12,7 +12,7 @@ describe Appboy::Endpoints::TrackUsers do
   let(:api) { API.new }
   let(:track_users_service) { double(:track_users_service) }
 
-  before { api.track_users_service = track_users_service }
+  before { expect(api).to receive(:track_users_service).and_return(track_users_service) }
 
   describe '#track_users' do
     let(:payload) {{

@@ -9,12 +9,8 @@ describe 'send messages' do
   end
 
   context 'with success', vcr: true do
-    it 'responds with created' do
-      expect(send_messages.status).to be 201
-    end
-
     it 'responds with success message' do
-      expect(JSON.parse(send_messages.body)).to eq(
+      expect(send_messages).to eq(
           'message' => 'success'
         )
     end
@@ -24,7 +20,7 @@ describe 'send messages' do
     let(:app_group_id) { 'non-existent' }
 
     it 'responds with unauthorized' do
-      expect(send_messages.status).to be 401
+      expect(send_messages["message"]).to eq("Invalid or missing App Group API Identifier: non-existent")
     end
   end
 end
