@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.appboy.com/email/unsubscribes?app_group_id=<APPBOY_GROUP_ID>&email=doesntexist@example.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx/1.8.0
+      Date:
+      - Tue, 14 Jul 2015 10:03:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 400 Bad Request
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Ratelimit-Limit:
+      - '50000'
+      X-Ratelimit-Remaining:
+      - '49998'
+      X-Ratelimit-Reset:
+      - '1436871600'
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 895437bb-beac-439e-97ff-4d9f1f33caf6
+      X-Runtime:
+      - '0.037886'
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"There is no user with the provided email"}'
+    http_version: 
+  recorded_at: Tue, 14 Jul 2015 10:03:08 GMT
+recorded_with: VCR 2.9.3
