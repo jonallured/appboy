@@ -3,7 +3,7 @@ module Appboy
     class TriggeredDeliveries < Base
       attr_reader :app_group_id, :campaign_id, :trigger_properties, :recipients
 
-      def initialize(app_group_id, campaign_id, trigger_properties, recipient: {})
+      def initialize(app_group_id, campaign_id:, trigger_properties:, recipient: {})
         @app_group_id = app_group_id
         @campaign_id = campaign_id
         @trigger_properties = trigger_properties
