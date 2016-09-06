@@ -11,7 +11,7 @@ module Appboy
       end
 
       def perform
-        http.post '/trigger/send', {
+        http.post '/campaigns/trigger/send', {
           app_group_id:       app_group_id,
           campaign_id:        campaign_id,
           trigger_properties: trigger_properties,
