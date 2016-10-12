@@ -3,7 +3,7 @@ module Appboy
     class ScheduleMessages < Base
       attr_reader :app_group_id, :send_at, :messages, :segment_id, :local_timezone, :external_user_ids, :campaign_id
 
-      def initialize(app_group_id, send_at:, messages: [], external_user_ids: [], campaign_id: nil, segment_id: nil,  local_timezone: false)
+      def initialize(app_group_id, send_at:, messages: [], external_user_ids: [], campaign_id: nil, segment_id: nil,  local_timezone: true)
         @app_group_id = app_group_id
         @send_at = send_at
         @messages = messages
