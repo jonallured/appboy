@@ -1,0 +1,13 @@
+language: ruby
+cache: bundler
+rvm:
+  - 2.2.6
+  - 2.3.1
+  - 2.3.2
+  - 2.3.3
+matrix:
+  fast_finish: true
+env:
+  global:
+    - APPBOY_GROUP_ID="fakegroupid"
+    - APPBOY_TEST_SEGMENT="fakesegment"
