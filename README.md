@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ymek/appboy.svg?branch=master)](https://travis-ci.org/ymek/appboy)
+
 # Appboy
 
 A wrapper for the Appboy REST API.

@@ -11,11 +11,14 @@ describe Appboy::REST::SendMessages do
 
   let(:app_group_id) { :app_group_id }
 
-  subject { described_class.new(app_group_id,
-    messages: :messages,
-    external_user_ids: :external_user_ids,
-    segment_id: :segment_id
-  ) }
+  subject {
+    described_class.new(app_group_id,
+      messages: :messages,
+      external_user_ids: :external_user_ids,
+      segment_id: :segment_id,
+      campaign_id: :campaign_id
+    )
+  }
 
   before { subject.http = http }
 
@@ -27,10 +30,11 @@ describe Appboy::REST::SendMessages do
 
   def expect_send_messages_http_call
     expect(http).to receive(:post).with '/messages/send', {
-      app_group_id: :app_group_id,
+      app_group_id: app_group_id,
       messages: :messages,
       external_user_ids: :external_user_ids,
-      segment_ids: [:segment_id]
+      segment_id: :segment_id,
+      campaign_id: :campaign_id
     }
   end
 end
