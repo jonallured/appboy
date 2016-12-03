@@ -16,7 +16,7 @@ module Appboy
           app_group_id:      app_group_id,
           messages:          messages,
           external_user_ids: external_user_ids,
-          segment_ids:       [segment_id].compact,
+          segment_id:        segment_id,
           campaign_id:       campaign_id
         })
       end
