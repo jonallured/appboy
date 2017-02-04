@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.appboy.com/email/unsubscribes?app_group_id=<APPBOY_GROUP_ID>&email=doesntexist@example.com
+    uri: https://api.appboy.com/email/unsubscribes?app_group_id=%3CAPPBOY_GROUP_ID%3E&email=doesntexist@example.com
     body:
       encoding: US-ASCII
       string: ''

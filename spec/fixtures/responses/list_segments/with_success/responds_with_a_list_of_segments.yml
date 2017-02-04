@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.appboy.com/segments/list?app_group_id=<APPBOY_GROUP_ID>
+    uri: https://api.appboy.com/segments/list?app_group_id=%3CAPPBOY_GROUP_ID%3E
     body:
       encoding: US-ASCII
       string: ''
