@@ -1,5 +1,4 @@
 require 'json'
-require 'virtus'
 require 'appboy/version'
 
 module Appboy
