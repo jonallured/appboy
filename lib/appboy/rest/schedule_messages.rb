@@ -1,9 +1,10 @@
 module Appboy
   module REST
     class ScheduleMessages < Base
+
       attr_reader :app_group_id, :send_at, :messages, :segment_id, :local_timezone, :external_user_ids, :campaign_id
 
-      def initialize(app_group_id, send_at:, messages: [], external_user_ids: [], local_timezone: false, campaign_id: nil, segment_id: nil,  logger: nil)
+      def initialize(app_group_id, send_at:, messages: [], external_user_ids: [], local_timezone: false, campaign_id: nil, segment_id: nil, logger: nil)
         @app_group_id = app_group_id
         @send_at = send_at
         @messages = messages
@@ -28,7 +29,9 @@ module Appboy
         end
         payload.merge!(campaign_id: campaign_id) unless campaign_id.nil?
         @logger.info("#{self.class.name}") { "http.post: #{@schedule_uri} payload: #{payload.to_s}"} unless @logger.nil?
-        http.post @schedule_uri, payload
+        result = http.post @schedule_uri, payload
+        @logger.info("#{self.class.name}") { "http.result: #{result.to_s}"} unless @logger.nil?
+        result
       end
     end
   end
