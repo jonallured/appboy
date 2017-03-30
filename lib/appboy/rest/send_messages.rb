@@ -1,6 +1,7 @@
 module Appboy
   module REST
     class SendMessages < Base
+
       attr_reader :app_group_id, :messages, :external_user_ids, :segment_id, :campaign_id
 
       def initialize(app_group_id, messages: [], external_user_ids: [], campaign_id: nil, segment_id: nil, logger: nil)
@@ -22,7 +23,9 @@ module Appboy
             segment_ids:       [segment_id].compact
         }
         @logger.info("#{self.class.name}") { "http.post: #{@send_uri} payload: #{payload.to_s}"} unless @logger.nil?
-        http.post @send_uri, payload
+        result = http.post @send_uri, payload
+        @logger.info("#{self.class.name}") { "http.result: #{result.to_s}"} unless @logger.nil?
+        result
       end
     end
   end
