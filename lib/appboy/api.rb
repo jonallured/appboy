@@ -13,18 +13,5 @@ module Appboy
     include Appboy::Endpoints::ScheduleMessages
     include Appboy::Endpoints::EmailStatus
 
-    def export_users(**payload)
-      Appboy::REST::ExportUsers.new.perform(app_group_id, payload)
-    end
-
-    def list_segments
-      Appboy::REST::ListSegments.new.perform(app_group_id)
-    end
-
-    attr_reader :app_group_id
-
-    def initialize(app_group_id)
-      @app_group_id = app_group_id
-    end
   end
 end

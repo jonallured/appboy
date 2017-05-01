@@ -4,12 +4,11 @@ describe Appboy::REST::SendMessages do
   let(:http) { double(:http) }
 
   let(:payload) {{
+    app_group_id: :app_group_id,
     messages: :messages,
     external_user_ids: :external_user_ids,
     segment_id: :segment_id
   }}
-
-  let(:app_group_id) { :app_group_id }
 
   subject { described_class.new(app_group_id,
     messages: :messages,
