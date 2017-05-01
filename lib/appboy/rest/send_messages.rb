@@ -1,22 +1,31 @@
 module Appboy
   module REST
     class SendMessages < Base
-      attr_reader :app_group_id, :messages, :external_user_ids, :segment_id
 
-      def initialize(app_group_id, messages: [], external_user_ids: [], segment_id: nil)
+      attr_reader :app_group_id, :messages, :external_user_ids, :segment_id, :campaign_id
+
+      def initialize(app_group_id, messages: [], external_user_ids: [], campaign_id: nil, segment_id: nil, logger: nil)
         @app_group_id = app_group_id
         @messages = messages
         @external_user_ids = external_user_ids
+        @campaign_id = campaign_id
         @segment_id = segment_id
+        @send_uri = '/messages/send'
+        @logger = logger
       end
 
       def perform
-        http.post '/messages/send', {
-          app_group_id:      app_group_id,
-          messages:          messages,
-          external_user_ids: external_user_ids,
-          segment_ids:       [segment_id].compact
+        payload = {
+            app_group_id:      app_group_id,
+            messages:          messages,
+            external_user_ids: external_user_ids,
+            campaign_id: campaign_id,
+            segment_ids:       [segment_id].compact
         }
+        @logger.info("#{self.class.name}") { "http.post: #{@send_uri} payload: #{payload.to_s}"} unless @logger.nil?
+        result = http.post @send_uri, payload
+        @logger.info("#{self.class.name}") { "http.result: #{result.to_s}"} unless @logger.nil?
+        result
       end
     end
   end
