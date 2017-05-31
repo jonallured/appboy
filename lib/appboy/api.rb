@@ -1,4 +1,5 @@
 require 'appboy/deprecated'
+require 'appboy/endpoints/delete_users'
 require 'appboy/endpoints/track_users'
 require 'appboy/endpoints/delete_users'
 require 'appboy/endpoints/send_messages'
@@ -13,6 +14,7 @@ module Appboy
   class API
     include Appboy::Deprecated
 
+    include Appboy::Endpoints::DeleteUsers
     include Appboy::Endpoints::TrackUsers
     include Appboy::Endpoints::DeleteUsers
     include Appboy::Endpoints::SendMessages
