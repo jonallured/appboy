@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'dotenv'
   spec.add_development_dependency 'vcr'
   spec.add_development_dependency 'webmock'
-  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'pry', '~> 0.9.12'
   spec.add_development_dependency 'activesupport'
-  spec.add_development_dependency 'factory_girl'
+  spec.add_development_dependency 'factory_girl', '~> 4.4.0'
 end
