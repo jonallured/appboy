@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.appboy.com/users/delete
+    body:
+      encoding: UTF-8
+      string: '{"app_group_id":"<APPBOY_GROUP_ID>","external_ids":[1,2],"appboy_ids":[]}'
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Server:
+      - nginx/1.10.2
+      X-Request-Id:
+      - 1e432499-cdf9-49c6-abc5-00354e59fe6b
+      X-Runtime:
+      - '0.003536'
+      Content-Length:
+      - '80'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 27 Jun 2017 14:44:22 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-ord1729-ORD
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1498574662.030820,VS0,VE24
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"deleted":2,"message":"success"}'
+    http_version:
+  recorded_at: Tue, 27 Jun 2017 14:44:22 GMT
+recorded_with: VCR 3.0.3
