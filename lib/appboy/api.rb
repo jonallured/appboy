@@ -12,7 +12,6 @@ module Appboy
     include Appboy::Endpoints::TrackUsers
     include Appboy::Endpoints::DeleteUsers
     include Appboy::Endpoints::SendMessages
-    include Appboy::Endpoints::TriggeredMessages
     include Appboy::Endpoints::ScheduleMessages
     include Appboy::Endpoints::EmailStatus
 
