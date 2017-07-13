@@ -10,12 +10,8 @@ describe 'schedule messages' do
   end
 
   context 'with success', vcr: true do
-    it 'responds with created' do
-      expect(schedule_messages.status).to be 201
-    end
-
     it 'responds with success message' do
-      expect(JSON.parse(schedule_messages.body)).to eq(
+      expect(schedule_messages).to eq(
           'message' => 'success'
         )
     end
@@ -25,7 +21,7 @@ describe 'schedule messages' do
     let(:app_group_id) { 'non-existent' }
 
     it 'responds with unauthorize' do
-      expect(schedule_messages.status).to be 401
+      expect(schedule_messages["message"]).to eq("Invalid or missing App Group API Identifier: non-existent")
     end
   end
 end

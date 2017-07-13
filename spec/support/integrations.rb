@@ -6,11 +6,7 @@ module Integrations
   included do
     let(:app_group_id) { ENV.fetch('APPBOY_GROUP_ID') }
     let(:segment_id) { ENV.fetch('APPBOY_TEST_SEGMENT') }
-
     let(:api) { Appboy::API.new(app_group_id) }
-
-
-
   end
 
   RSpec.configure do |config|
