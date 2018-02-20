@@ -14,13 +14,19 @@ module Appboy
     end
 
     def connection
-      @connection ||= Faraday.new(url: 'https://api.appboy.com') do |connection|
+      @connection ||= Faraday.new(url: api_host) do |connection|
         connection.request :json
 
         connection.response :logger if ENV['APPBOY_DEBUG']
 
         connection.adapter Faraday.default_adapter
       end
+    end
+
+    private
+
+    def api_host
+      @api_host ||= ENV.fetch('APPBOY_REST_BASE_URL', 'https://api.appboy.com')
     end
   end
 end
