@@ -24,6 +24,12 @@ Or install it yourself as:
 api = Appboy::API.new('<app-group-id>')
 ```
 
+By default Appboy will be using 'https://api.appboy.com' as the default REST API base url, but you can override this base url by setting the env variable `APPBOY_REST_BASE_URL`. E.G.
+
+```
+APPBOY_REST_BASE_URL="https://rest.iad-01.braze.com" 
+```
+
 ### Track User Attributes
 
 See: [User Attributes Object Specification](https://documentation.appboy.com/REST_APIs/User_Data#user-attribute-object)
