@@ -5,8 +5,8 @@ describe 'schedule messages' do
   let(:messages) { build(:messages) }
 
   subject(:schedule_messages) do
-    api.schedule_messages(send_at: test_time,
-      messages: messages, segment_id: segment_id)
+    api.schedule_messages(time: test_time,
+      messages: messages, external_user_ids: user_ids)
   end
 
   context 'with success', vcr: true do
@@ -15,14 +15,14 @@ describe 'schedule messages' do
     end
 
     it 'responds with success message' do
-      expect(JSON.parse(schedule_messages.body)).to eq(
+      expect(JSON.parse(schedule_messages.body)).to include(
           'message' => 'success'
         )
     end
   end
 
   context 'unauthorized', vcr: true do
-    let(:app_group_id) { 'non-existent' }
+    let(:api_key) { 'non-existent' }
 
     it 'responds with unauthorize' do
       expect(schedule_messages.status).to be 401

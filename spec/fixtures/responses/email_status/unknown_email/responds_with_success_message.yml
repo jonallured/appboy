@@ -5,7 +5,7 @@ http_interactions:
     uri: "<BRAZE_REST_URL>/email/status"
     body:
       encoding: UTF-8
-      string: '{"api_key":"<BRAZE_REST_API_KEY>","email":"john@example.com","subscription_state":"unsubscribed"}'
+      string: '{"api_key":"<BRAZE_REST_API_KEY>","email":"notthere@example.com","subscription_state":"unsubscribed"}'
     headers:
       User-Agent:
       - Faraday v0.14.0
@@ -34,13 +34,13 @@ http_interactions:
       X-Ratelimit-Limit:
       - '50000'
       X-Ratelimit-Remaining:
-      - '49998'
+      - '49996'
       X-Ratelimit-Reset:
       - '1524002400'
       X-Request-Id:
-      - 57d0c42f-8187-434e-82ad-bc57b93af0d7
+      - 3050a957-b5b3-4f16-bdd1-c42ac5718d67
       X-Runtime:
-      - '0.031383'
+      - '0.013591'
       Content-Length:
       - '46'
       Accept-Ranges:
@@ -52,18 +52,18 @@ http_interactions:
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-pdk17831-PDK
+      - cache-pdk17843-PDK
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1523999299.122858,VS0,VE189
+      - S1523999300.711704,VS0,VE182
       Vary:
       - Accept-Encoding
     body:
       encoding: ASCII-8BIT
       string: '{"message":"success"}'
     http_version: 
-  recorded_at: Tue, 17 Apr 2018 21:08:19 GMT
+  recorded_at: Tue, 17 Apr 2018 21:08:20 GMT
 recorded_with: VCR 4.0.0

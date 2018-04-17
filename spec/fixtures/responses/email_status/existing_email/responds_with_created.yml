@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.appboy.com/email/status
+    uri: "<BRAZE_REST_URL>/email/status"
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"<APPBOY_GROUP_ID>","email":"john@example.com","subscription_state":"unsubscribed"}'
+      string: '{"api_key":"<BRAZE_REST_API_KEY>","email":"john@example.com","subscription_state":"unsubscribed"}'
     headers:
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v0.14.0
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -20,35 +20,50 @@ http_interactions:
       code: 201
       message: Created
     headers:
-      Server:
-      - nginx/1.6.2
-      Date:
-      - Thu, 19 Feb 2015 20:42:25 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Status:
-      - 201 Created
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"8736cdfe08480bca66cffeee06268705"'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"838a7c62adda8d131d694ae13ba2c5b7"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '50000'
+      X-Ratelimit-Remaining:
+      - '49999'
+      X-Ratelimit-Reset:
+      - '1524002400'
       X-Request-Id:
-      - 664ec9e1c8bf8666cadff79ee1a56434
+      - 24433bbb-89d6-4bd3-918f-46e7865d383e
       X-Runtime:
-      - '0.024496'
+      - '0.034502'
+      Content-Length:
+      - '46'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 17 Apr 2018 21:08:19 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-pdk17830-PDK
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1523999299.770713,VS0,VE230
       Vary:
       - Accept-Encoding
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: '{"message":"success"}'
     http_version: 
-  recorded_at: Thu, 19 Feb 2015 20:42:24 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Tue, 17 Apr 2018 21:08:19 GMT
+recorded_with: VCR 4.0.0
