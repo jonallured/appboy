@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.appboy.com/email/unsubscribes?app_group_id=<APPBOY_GROUP_ID>&email=john@example.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Date:
+      - Tue, 14 Jul 2015 10:06:02 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Ratelimit-Limit:
+      - '50000'
+      X-Ratelimit-Remaining:
+      - '49996'
+      X-Ratelimit-Reset:
+      - '1436871600'
+      Etag:
+      - W/"872f3df6945c3d2dce7b683affc69a8c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 05e491ef-b630-4741-9257-4999ff5811e2
+      X-Runtime:
+      - '0.055535'
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"emails":[],"message":"success"}'
+    http_version: 
+  recorded_at: Tue, 14 Jul 2015 10:06:02 GMT
+recorded_with: VCR 2.9.3
