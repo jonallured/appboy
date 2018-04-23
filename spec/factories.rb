@@ -29,4 +29,16 @@ FactoryGirl.define do
 
     initialize_with { attributes }
   end
+
+  factory :recipients, class: Array do
+    sequence(:external_user_id)
+
+    initialize_with { attributes }
+  end
+
+  factory :external_ids, class: Hash do
+    external_ids { [1,2] }
+
+    initialize_with { attributes }
+  end
 end
