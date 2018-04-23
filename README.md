@@ -24,6 +24,12 @@ Or install it yourself as:
 api = Appboy::API.new('<app-group-id>')
 ```
 
+By default Appboy will be using 'https://api.appboy.com' as the default REST API base url, but you can override this base url by setting the env variable `APPBOY_REST_BASE_URL`. E.G.
+
+```
+APPBOY_REST_BASE_URL="https://rest.iad-01.braze.com" 
+```
+
 ### Track User Attributes
 
 See: [User Attributes Object Specification](https://documentation.appboy.com/REST_APIs/User_Data#user-attribute-object)
@@ -53,7 +59,7 @@ api.track_users(events: [{
   external_id: 123,
   name: 'add-to-cart',
   time: Time.now
-}]
+}])
 ```
 
 ##### Track Events for Single User
@@ -73,7 +79,7 @@ api.track_users(purchases: [{
   currency: 'CAD',
   price: 1.99,
   time: Time.now
-}]
+}])
 ```
 
 ##### Track Purchases for Single User
@@ -154,7 +160,15 @@ api.export_users(external_ids: [1])
 api.export_users(segment_id: segment_id, callback_endpoint: 'https://example.com')
 ```
 
+## Debugging
 
+The APPBOY_DEBUG environment variable will trigger full printouts of the Faraday gem's HTTP requests and responses.
+
+```bash
+cd /my/app
+export APPBOY_DEBUG=true
+bundle exec rails whatever
+```
 
 ## Contributing
 
