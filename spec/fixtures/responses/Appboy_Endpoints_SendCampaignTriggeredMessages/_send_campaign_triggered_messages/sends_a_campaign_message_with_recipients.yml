@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.appboy.com/campaigns/trigger/send
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"app_group_id","audience":"audience","broadcast":"broadcast","campaign_id":"campaign_id","recipients":"recipients","send_id":"send_id","trigger_properties":"trigger_properties"}'
+    headers:
+      User-Agent:
+      - Faraday v0.15.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      X-Ratelimit-Limit:
+      - ''
+      X-Ratelimit-Remaining:
+      - ''
+      X-Ratelimit-Reset:
+      - ''
+      X-Request-Id:
+      - 2639fcc4-0481-4b9b-94fc-3cd233adb696
+      X-Runtime:
+      - '0.006411'
+      Content-Length:
+      - '84'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 25 Apr 2018 20:11:42 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-ord1735-ORD
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1524687102.173661,VS0,VE115
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invalid App Group API Identifier: app_group_id"}'
+    http_version: 
+  recorded_at: Wed, 25 Apr 2018 20:11:42 GMT
+recorded_with: VCR 4.0.0
