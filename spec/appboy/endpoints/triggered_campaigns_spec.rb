@@ -1,27 +1,27 @@
 require 'spec_helper'
-require 'appboy/endpoints/send_campaign_triggered_messages'
+require 'appboy/endpoints/trigger_campaign'
 
 class API
-  include Appboy::Endpoints::SendCampaignTriggeredMessages
+  include Appboy::Endpoints::TriggerCampaign
 
   def app_group_id
     :api_key
   end
 end
 
-describe Appboy::Endpoints::SendCampaignTriggeredMessages do
+describe 'Appboy::Endpoints::TriggerCampaign' do
   let(:api) { API.new }
   let(:performer) do
-    instance_double "Appboy::REST::SendCampaignTriggeredMessages"
+    instance_double 'Appboy::REST::TriggerCampaign'
   end
 
   before do
-    allow(api.send(:send_campaign_triggered_messages_service))
+    allow(api.send(:trigger_campaign_service))
       .to receive(:new).and_return(performer)
     allow(performer).to receive(:perform).and_return true
   end
 
-  describe '#send_campaign_triggered_messages_service', vcr: true do
+  describe '#trigger_campaign_service', vcr: true do
     let(:payload) do
       {
         audience: :audience,
@@ -33,15 +33,15 @@ describe Appboy::Endpoints::SendCampaignTriggeredMessages do
       }
     end
 
-    subject(:send_campaign_triggered_messages!) do
-      api.send_campaign_triggered_messages(payload)
+    subject(:trigger_campaign!) do
+      api.trigger_campaign(payload)
     end
 
     it 'sends a campaign message with recipients' do
-      expect(api.send(:send_campaign_triggered_messages_service))
+      expect(api.send(:trigger_campaign_service))
         .to receive(:new).with(:api_key, payload)
 
-      send_campaign_triggered_messages!
+      trigger_campaign!
     end
   end
 end
