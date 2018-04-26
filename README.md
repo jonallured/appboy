@@ -140,7 +140,7 @@ api.trigger_campaign(
 ##### Option B, Using Canvas ID
 
 ```ruby
-api.send_canvas_triggered_messages(
+api.trigger_canvas(
   api_key: (required, string),
   campaign_id: (required, string),
   audience: (optional, string),
