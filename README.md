@@ -124,7 +124,6 @@ api.send_messages(messages: messages, segment_id: '<segment-id>')
 See: [Sending Messages via API Triggered Delivery](https://www.braze.com/documentation/REST_API/#sending-messages-via-api-triggered-delivery)
 
 ##### Option A, Using Campaign ID
-
 ```ruby
 api.trigger_campaign(
   api_key: (required, string),
