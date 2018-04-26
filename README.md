@@ -27,12 +27,12 @@ api = Appboy::API.new('<app-group-id>')
 By default Appboy will be using 'https://api.appboy.com' as the default REST API base url, but you can override this base url by setting the env variable `APPBOY_REST_BASE_URL`. E.G.
 
 ```
-APPBOY_REST_BASE_URL="https://rest.iad-01.braze.com" 
+APPBOY_REST_BASE_URL="https://rest.iad-01.braze.com"
 ```
 
 ### Track User Attributes
 
-See: [User Attributes Object Specification](https://documentation.appboy.com/REST_APIs/User_Data#user-attribute-object)
+See: [User Attributes Object Specification](https://www.braze.com/documentation/REST_API/#user-attributes-object-specification)
 
 ```ruby
 api.track_users(attributes: [{
@@ -52,7 +52,7 @@ api.track_attribute(external_id: 123, first_name: 'John', ...)
 
 ### Track Event
 
-See: [Event Object Specification](https://documentation.appboy.com/REST_APIs/User_Data#event-object)
+See: [Event Object Specification](https://www.braze.com/documentation/REST_API/#event-object-specification)
 
 ```ruby
 api.track_users(events: [{
@@ -70,7 +70,7 @@ api.track_event(external_id: 123, name: 'Event', ...)
 
 ### Track Purchase
 
-See: [Purchase Object Specfication](https://documentation.appboy.com/REST_APIs/User_Data#purchase-object)
+See: [Purchase Object Specfication](https://www.braze.com/documentation/REST_API/#purchase-object-specification)
 
 ```ruby
 api.track_users(purchases: [{
@@ -96,7 +96,7 @@ api.track_users(purchases: purchases, events: events, attributes: attributes)
 
 ### Send Message
 
-See: [Platform Push Object Specifications](https://documentation.appboy.com/REST_APIs/Messaging#platform-push-object)
+See: [Platform Push Object Specifications](https://www.braze.com/documentation/REST_API/#messaging)
 
 ##### Messages Payload
 
@@ -119,10 +119,40 @@ api.send_messages(messages: messages, external_user_ids: [123, 456])
 api.send_messages(messages: messages, segment_id: '<segment-id>')
 ```
 
+### Triggered Delivery Messages
+
+See: [Sending Messages via API Triggered Delivery](https://www.braze.com/documentation/REST_API/#sending-messages-via-api-triggered-delivery)
+
+##### Option A, Using Campaign ID
+
+```ruby
+api.send_campaign_triggered_messages(
+  api_key: (required, string),
+  campaign_id: (required, string),
+  send_id: (optional, string),
+  audience: (optional, string),
+  trigger_properties: (optional, object),
+  broadcast: (optional, boolean, default, false),
+  recipients: (optional, array of recipient objects)
+)
+```
+
+##### Option B, Using Canvas ID
+
+```ruby
+api.send_canvas_triggered_messages(
+  api_key: (required, string),
+  campaign_id: (required, string),
+  audience: (optional, string),
+  canvas_entry_properties: (optional, object),
+  broadcast: (optional, boolean, default, false),
+  recipients: (optional, array of recipient objects)
+)
+```
 
 ### Schedule Message
 
-See: [Platform Push Object Specifications](https://documentation.appboy.com/REST_APIs/Messaging#platform-push-object)
+See: [Platform Push Object Specifications](https://www.braze.com/documentation/REST_API/#schedule-api-triggered-campaigns-and-canvases)
 
 ```ruby
 api.schedule_messages(send_at: 1.hour.since, messages: messages, segment_id: '<segment-id>')
@@ -130,7 +160,7 @@ api.schedule_messages(send_at: 1.hour.since, messages: messages, segment_id: '<s
 
 ### Changing Email Subscription
 
-See: [Changing Email Subscription Status](https://documentation.appboy.com/REST_APIs/Email_Sync#post)
+See: [Changing Email Subscription Status](https://www.braze.com/documentation/REST_API/#email-sync)
 
 ```ruby
 api.email_status(email: 'john@example.com', status: :opted_in)
@@ -138,7 +168,7 @@ api.email_status(email: 'john@example.com', status: :opted_in)
 
 ### List Segments
 
-See: [Segment Export](https://documentation.appboy.com/REST_APIs/Export)
+See: [Segment Export](https://www.braze.com/documentation/REST_API/#segment-export)
 
 ```ruby
 api.list_segments
@@ -146,7 +176,7 @@ api.list_segments
 
 ### Export Users
 
-See: [User Export](https://documentation.appboy.com/REST_APIs/Export#user-export)
+See: [User Export](https://www.braze.com/documentation/REST_API/#user-export)
 
 #### By IDs
 
