@@ -1,10 +1,11 @@
 require 'appboy/deprecated'
-require 'appboy/endpoints/track_users'
 require 'appboy/endpoints/delete_users'
-require 'appboy/endpoints/trigger_campaign'
-require 'appboy/endpoints/send_messages'
-require 'appboy/endpoints/schedule_messages'
 require 'appboy/endpoints/email_status'
+require 'appboy/endpoints/schedule_messages'
+require 'appboy/endpoints/send_messages'
+require 'appboy/endpoints/track_users'
+require 'appboy/endpoints/trigger_campaign'
+require 'appboy/endpoints/trigger_canvas'
 
 module Appboy
   class API
