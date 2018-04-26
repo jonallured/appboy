@@ -1,6 +1,6 @@
 module Appboy
   module REST
-    class SendCampaignTriggeredMessages < Base
+    class TriggerCampaign < Base
       attr_reader :api_key, :audience, :broadcast, :campaign_id,
                   :recipients, :send_id, :trigger_properties
 

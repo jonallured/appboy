@@ -1,7 +1,7 @@
 require 'appboy/deprecated'
 require 'appboy/endpoints/track_users'
 require 'appboy/endpoints/delete_users'
-require 'appboy/endpoints/send_campaign_triggered_messages'
+require 'appboy/endpoints/trigger_campaign'
 require 'appboy/endpoints/send_messages'
 require 'appboy/endpoints/schedule_messages'
 require 'appboy/endpoints/email_status'
@@ -13,10 +13,9 @@ module Appboy
     include Appboy::Endpoints::DeleteUsers
     include Appboy::Endpoints::EmailStatus
     include Appboy::Endpoints::ScheduleMessages
-    include Appboy::Endpoints::SendCampaignTriggeredMessages
-    include Appboy::Endpoints::SendCanvasTriggeredMessages
     include Appboy::Endpoints::SendMessages
     include Appboy::Endpoints::TrackUsers
+    include Appboy::Endpoints::TriggerCampaign
 
     def export_users(**payload)
       Appboy::REST::ExportUsers.new.perform(app_group_id, payload)

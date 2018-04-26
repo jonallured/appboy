@@ -126,7 +126,7 @@ See: [Sending Messages via API Triggered Delivery](https://www.braze.com/documen
 ##### Option A, Using Campaign ID
 
 ```ruby
-api.send_campaign_triggered_messages(
+api.trigger_campaign(
   api_key: (required, string),
   campaign_id: (required, string),
   send_id: (optional, string),
