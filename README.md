@@ -123,6 +123,8 @@ api.send_messages(messages: messages, segment_id: '<segment-id>')
 
 See: [Sending Messages via API Triggered Delivery](https://www.braze.com/documentation/REST_API/#sending-messages-via-api-triggered-delivery)
 
+##### Option A, Using Campaign ID
+
 ```ruby
 api.send_campaign_triggered_messages(
   api_key: (required, string),
@@ -130,6 +132,19 @@ api.send_campaign_triggered_messages(
   send_id: (optional, string),
   audience: (optional, string),
   trigger_properties: (optional, object),
+  broadcast: (optional, boolean, default, false),
+  recipients: (optional, array of recipient objects)
+)
+```
+
+##### Option B, Using Canvas ID
+
+```ruby
+api.send_canvas_triggered_messages(
+  api_key: (required, string),
+  campaign_id: (required, string),
+  audience: (optional, string),
+  canvas_entry_properties: (optional, object),
   broadcast: (optional, boolean, default, false),
   recipients: (optional, array of recipient objects)
 )
