@@ -1,6 +1,6 @@
 module Appboy
   module REST
-    class SendCanvasTriggeredMessages < Base
+    class TriggerCanvas < Base
       attr_reader :api_key, :audience, :broadcast, :canvas_id,
                   :canvas_entry_properties, :recipients
 

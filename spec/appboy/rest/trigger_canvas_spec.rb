@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Appboy::REST::SendCanvasTriggeredMessages do
+describe Appboy::REST::TriggerCanvas do
   let(:http) { double(:http) }
 
   let(:payload) do

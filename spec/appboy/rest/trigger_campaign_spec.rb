@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Appboy::REST::SendCampaignTriggeredMessages do
+describe Appboy::REST::TriggerCampaign do
   let(:http) { double(:http) }
 
   let(:payload) do
