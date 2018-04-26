@@ -136,6 +136,19 @@ api.trigger_campaign(
 )
 ```
 
+##### Option B, Using Canvas ID
+
+```ruby
+api.trigger_canvas(
+  api_key: (required, string),
+  campaign_id: (required, string),
+  audience: (optional, string),
+  canvas_entry_properties: (optional, object),
+  broadcast: (optional, boolean, default, false),
+  recipients: (optional, array of recipient objects)
+)
+```
+
 ### Schedule Message
 
 See: [Platform Push Object Specifications](https://www.braze.com/documentation/REST_API/#schedule-api-triggered-campaigns-and-canvases)
