@@ -4,6 +4,7 @@ require 'appboy/endpoints/delete_users'
 require 'appboy/endpoints/send_messages'
 require 'appboy/endpoints/schedule_messages'
 require 'appboy/endpoints/email_status'
+require 'appboy/endpoints/email_unsubscribes'
 require 'appboy/endpoints/trigger_campaign'
 require 'appboy/endpoints/trigger_canvas'
 
@@ -16,6 +17,7 @@ module Appboy
     include Appboy::Endpoints::SendMessages
     include Appboy::Endpoints::ScheduleMessages
     include Appboy::Endpoints::EmailStatus
+    include Appboy::Endpoints::EmailUnsubscribes
     include Appboy::Endpoints::TriggerCampaign
     include Appboy::Endpoints::TriggerCanvas
 
