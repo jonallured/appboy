@@ -11,6 +11,7 @@ module Appboy
       end
 
       def perform
+        # https://www.braze.com/documentation/REST_API/#sending-messages-via-api-triggered-delivery
         http.post(
           '/campaigns/trigger/send',
           app_group_id: app_group_id,
