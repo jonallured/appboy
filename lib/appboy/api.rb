@@ -9,6 +9,7 @@ require 'appboy/endpoints/trigger_campaign'
 require 'appboy/endpoints/trigger_canvas'
 require 'appboy/endpoints/list_canvas'
 require 'appboy/endpoints/email'
+require 'appboy/endpoints/trigger_campaign'
 
 module Appboy
   class API
@@ -24,6 +25,7 @@ module Appboy
     include Appboy::Endpoints::TriggerCanvas
     include Appboy::Endpoints::ListCanvas
     include Appboy::Endpoints::Email
+    include Appboy::Endpoints::TriggerCampaign
 
     def export_users(**payload)
       Appboy::REST::ExportUsers.new.perform(app_group_id, payload)
