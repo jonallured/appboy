@@ -20,7 +20,7 @@ describe Appboy::Endpoints::TriggerCampaign do
   describe '#trigger_campaign_service' do
     let(:payload) {{
       campaign_id: 1,
-      external_user_ids: [],
+      external_user_id: "123",
       trigger_properties: {},
     }}
 
