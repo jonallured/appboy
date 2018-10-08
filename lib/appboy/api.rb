@@ -10,6 +10,7 @@ require 'appboy/endpoints/trigger_canvas'
 require 'appboy/endpoints/list_canvas'
 require 'appboy/endpoints/email'
 require 'appboy/endpoints/trigger_campaign'
+require 'appboy/endpoints/campaign_details'
 
 module Appboy
   class API
