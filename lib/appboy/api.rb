@@ -27,6 +27,7 @@ module Appboy
     include Appboy::Endpoints::ListCanvas
     include Appboy::Endpoints::Email
     include Appboy::Endpoints::TriggerCampaign
+    include Appboy::Endpoints::CampaignDetails
 
     def export_users(**payload)
       Appboy::REST::ExportUsers.new.perform(app_group_id, payload)

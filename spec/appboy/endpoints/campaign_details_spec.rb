@@ -17,7 +17,7 @@ describe Appboy::Endpoints::CampaignDetails do
 
   before { expect(api).to receive(:campaign_details_service).and_return(campaign_details_service) }
 
-  describe '#trigger_campaign_service' do
+  describe '#campaign_details_service' do
     let(:payload) {{
       campaign_id: 1,
     }}
