@@ -178,6 +178,7 @@ api.list_segments
 See: [User Export](https://www.braze.com/documentation/REST_API/#user-export)
 
 #### By IDs
+Either `external_ids`, `user_aliases`, `device_id`, `braze_id`, or `email_address` are required. Requests must specify only one.
 
 ```ruby
 api.export_users(external_ids: [1])
