@@ -3,8 +3,8 @@ require 'spec_helper'
 class API
   include Appboy::Endpoints::TrackUsers
 
-  def app_group_id
-    :app_group_id
+  def api_key
+    :api_key
   end
 end
 
@@ -25,7 +25,7 @@ describe Appboy::Endpoints::TrackUsers do
 
     it 'tracks attributes, events and purchases' do
       expect(track_users_service).to receive(:perform)
-        .with(:app_group_id, payload)
+        .with(payload)
 
       track_users!
     end
@@ -38,7 +38,7 @@ describe Appboy::Endpoints::TrackUsers do
 
     it 'tracks a single purchase' do
       expect(track_users_service).to receive(:perform)
-        .with(:app_group_id, purchases: [payload])
+        .with(purchases: [payload])
 
       track_purchase!
     end
@@ -51,7 +51,7 @@ describe Appboy::Endpoints::TrackUsers do
 
     it 'tracks a single purchase' do
       expect(track_users_service).to receive(:perform)
-        .with(:app_group_id, events: [payload])
+        .with(events: [payload])
 
       track_event!
     end
@@ -64,7 +64,7 @@ describe Appboy::Endpoints::TrackUsers do
 
     it 'tracks a single purchase' do
       expect(track_users_service).to receive(:perform)
-          .with(:app_group_id, attributes: [payload])
+          .with(attributes: [payload])
 
       track_attribute!
     end

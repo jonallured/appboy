@@ -4,7 +4,7 @@ module Appboy
       attr_writer :track_users_service
 
       def track_users(**payload)
-        track_users_service.perform(app_group_id, payload)
+        track_users_service.perform(payload)
       end
 
       def track_purchase(payload)
@@ -22,7 +22,7 @@ module Appboy
       private
 
       def track_users_service
-        @track_users_service ||= Appboy::REST::TrackUsers.new
+        @track_users_service ||= Appboy::REST::TrackUsers.new(api_key)
       end
     end
   end

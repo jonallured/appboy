@@ -38,7 +38,6 @@ describe Appboy::REST::TriggerCampaign do
 
   def expect_send_messages_http_call
     expect(http).to receive(:post).with '/campaigns/trigger/send', {
-      api_key: :api_key,
       audience: :audience,
       broadcast: :broadcast,
       campaign_id: :campaign_id,

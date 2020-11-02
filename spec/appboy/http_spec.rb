@@ -2,6 +2,9 @@ require 'spec_helper'
 require 'appboy/http'
 
 describe Appboy::HTTP do
+
+  subject { described_class.new(:api_key) }
+
   describe '#connection' do
     it 'sets the default url prefix' do
       expect(subject.connection.url_prefix.to_s).to eql "https://api.appboy.com/"

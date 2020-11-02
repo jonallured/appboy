@@ -20,17 +20,17 @@ module Appboy
     include Appboy::Endpoints::TriggerCanvas
 
     def export_users(**payload)
-      Appboy::REST::ExportUsers.new.perform(app_group_id, payload)
+      Appboy::REST::ExportUsers.new(api_key).perform(payload)
     end
 
     def list_segments
-      Appboy::REST::ListSegments.new.perform(app_group_id)
+      Appboy::REST::ListSegments.new(api_key).perform
     end
 
-    attr_reader :app_group_id
+    attr_reader :api_key
 
-    def initialize(app_group_id)
-      @app_group_id = app_group_id
+    def initialize(api_key)
+      @api_key = api_key
     end
   end
 end

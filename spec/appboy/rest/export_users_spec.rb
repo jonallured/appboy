@@ -5,16 +5,16 @@ describe Appboy::REST::ExportUsers do
 
   let(:payload) {{ external_ids: :external_ids }}
 
-  let(:app_group_id) { :app_group_id }
+  let(:api_key) { :api_key }
 
-  subject { described_class.new }
+  subject { described_class.new(api_key) }
 
   before { subject.http = http }
 
   it 'makes an http call to the track user endpoint' do
     expect(http).to receive(:post).with '/users/export/ids',
-        payload.merge({ app_group_id: :app_group_id })
+        payload
 
-    subject.perform(app_group_id, payload)
+    subject.perform(payload)
   end
 end

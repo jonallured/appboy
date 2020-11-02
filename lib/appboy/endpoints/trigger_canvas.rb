@@ -2,7 +2,7 @@ module Appboy
   module Endpoints
     module TriggerCanvas
       def trigger_canvas(**payload)
-        trigger_canvas_service.new(app_group_id, payload).perform
+        trigger_canvas_service.new(api_key, payload).perform
       end
 
       private

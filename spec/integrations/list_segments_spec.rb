@@ -9,9 +9,9 @@ describe 'list segments' do
     end
 
     it 'responds with a list of segments' do
-      expect(segments.count).to be 7
+      expect(segments.count).to be > 0
 
-      expect(segments.first['name']).to eq 'test'
+      expect(segments.first['name']).not_to be_empty
     end
 
     def segments
