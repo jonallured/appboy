@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.appboy.com/messages/send
+    body:
+      encoding: UTF-8
+      string: '{"messages":{"apple_push":{"alert":"hello"}},"external_user_ids":[1],"segment_ids":[]}'
+    headers:
+      Authorization:
+      - Bearer <APPBOY_API_KEY>
+      User-Agent:
+      - Faraday v1.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '94'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"8a971cf64dc8fc1fe808397536b86f9b"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249941'
+      X-Ratelimit-Reset:
+      - '1604329200'
+      X-Request-Id:
+      - 11228251-b4fa-4273-9039-9e948668dcf6
+      X-Runtime:
+      - '0.013324'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 02 Nov 2020 14:59:10 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-pdk17832-PDK
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1604329150.059926,VS0,VE69
+      Vary:
+      - Origin,Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"dispatch_id":"e330e452b33475e7ef80c2360b06bea7","message":"success"}'
+  recorded_at: Mon, 02 Nov 2020 14:59:10 GMT
+recorded_with: VCR 6.0.0

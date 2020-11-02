@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.appboy.com/users/export/ids
+    body:
+      encoding: UTF-8
+      string: '{"external_ids":[1]}'
+    headers:
+      Authorization:
+      - Bearer <APPBOY_API_KEY>
+      User-Agent:
+      - Faraday v1.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '74'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"a2bffe53dd0293835943234b29bbd3ce"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249997'
+      X-Ratelimit-Reset:
+      - '1604113200'
+      X-Request-Id:
+      - 8f13edcd-1d56-4ec4-b658-4c88f5a2cc21
+      X-Runtime:
+      - '0.035335'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 31 Oct 2020 02:48:19 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-fty21324-FTY
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1604112499.129989,VS0,VE92
+      Vary:
+      - Origin,Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"users":[],"invalid_user_ids":[1],"message":"success"}'
+  recorded_at: Sat, 31 Oct 2020 02:48:19 GMT
+recorded_with: VCR 6.0.0

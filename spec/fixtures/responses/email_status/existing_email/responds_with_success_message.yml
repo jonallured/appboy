@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.appboy.com/email/status
+    body:
+      encoding: UTF-8
+      string: '{"email":"john@example.com","subscription_state":"unsubscribed"}'
+    headers:
+      Authorization:
+      - Bearer <APPBOY_API_KEY>
+      User-Agent:
+      - Faraday v1.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '46'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"838a7c62adda8d131d694ae13ba2c5b7"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249948'
+      X-Ratelimit-Reset:
+      - '1604329200'
+      X-Request-Id:
+      - 6b2b0ceb-b179-46b2-92c9-703c6f7edeed
+      X-Runtime:
+      - '0.008117'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 02 Nov 2020 14:56:10 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-fty21324-FTY
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1604328970.069151,VS0,VE66
+      Vary:
+      - Origin,Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"success"}'
+  recorded_at: Mon, 02 Nov 2020 14:56:10 GMT
+recorded_with: VCR 6.0.0

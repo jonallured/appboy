@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.appboy.com/users/track
+    body:
+      encoding: UTF-8
+      string: '{"attributes":[{"external_id":1,"foo":"bar"}],"events":[{"external_id":1,"name":"baz","time":"2015-02-15
+        00:00:00 -0500"}],"purchases":[{"external_id":1,"product_id":1,"time":"2015-02-15
+        00:00:00 -0500","currency":"CAD","price":1.0}]}'
+    headers:
+      Authorization:
+      - Bearer <APPBOY_API_KEY>
+      User-Agent:
+      - Faraday v1.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '85'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"68b326343749fed4d6cc5dda395b5367"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '250000'
+      X-Ratelimit-Reset:
+      - '1604113200'
+      X-Request-Id:
+      - 845ca2aa-8f2f-4c6d-b508-75ac6d0ef4e0
+      X-Runtime:
+      - '0.017891'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 31 Oct 2020 02:40:35 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-fty21361-FTY
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1604112035.430586,VS0,VE79
+      Vary:
+      - Origin,Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"attributes_processed":1,"events_processed":1,"purchases_processed":1,"message":"success"}'
+  recorded_at: Sat, 31 Oct 2020 02:40:35 GMT
+recorded_with: VCR 6.0.0
