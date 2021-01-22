@@ -173,6 +173,17 @@ See: [Segment Export](https://www.braze.com/documentation/REST_API/#segment-expo
 api.list_segments
 ```
 
+### List Canvas
+
+See: [Segment Export](https://www.braze.com/docs/api/endpoints/export/canvas/get_canvases)
+
+```ruby
+api.list_canvas(
+  sort_direction: (optional, string, default: 'desc',
+  include_archived: (optional, boolean, default: false)
+)
+```
+
 ### Export Users
 
 See: [User Export](https://www.braze.com/documentation/REST_API/#user-export)
