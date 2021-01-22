@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.appboy.com/canvas/list?app_group_id=<APPBOY_GROUP_ID>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Server:
+      - nginx
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249992'
+      X-Ratelimit-Reset:
+      - '1611349200'
+      Etag:
+      - W/"51dc6bc869351170ca28552c48fbad29"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - cd1e61fb-a740-413e-b12e-dadbacddf788
+      X-Runtime:
+      - '0.013484'
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 22 Jan 2021 20:24:16 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-dca17778-DCA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1611347056.075099,VS0,VE17
+      Vary:
+      - Origin,Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"canvases":[{"id":"2f28a304-d5bf-4032-a90f-03385d1b0330","name":"ONBOARDING_NEW
+        SUBSCRIBERS","tags":[],"last_edited":"2017-09-05T20:57:55+00:00"},{"id":"eb7e3341-4734-4cc0-ae39-942e564c0c55","name":"ONBOARDING_COI","tags":[],"last_edited":"2017-09-05T20:58:34+00:00"},{"id":"d8bd2da6-d3ee-4a56-aa26-9c88e7f59cd8","name":"RESUBSCRIBERS","tags":[],"last_edited":"2017-09-05T21:14:17+00:00"},{"id":"c27f07fa-d3e7-8b57-fc7c-bfdbb5e0fb34","name":"NEWSLETTER_DAILY_StagingTest","tags":[],"last_edited":"2020-10-12T14:01:46+00:00"}],"message":"success"}'
+  recorded_at: Fri, 22 Jan 2021 20:24:16 GMT
+recorded_with: VCR 6.0.0
