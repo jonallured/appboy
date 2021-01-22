@@ -6,6 +6,7 @@ require 'appboy/endpoints/schedule_messages'
 require 'appboy/endpoints/email_status'
 require 'appboy/endpoints/trigger_campaign'
 require 'appboy/endpoints/trigger_canvas'
+require 'appboy/endpoints/list_canvas'
 
 module Appboy
   class API
@@ -18,6 +19,7 @@ module Appboy
     include Appboy::Endpoints::EmailStatus
     include Appboy::Endpoints::TriggerCampaign
     include Appboy::Endpoints::TriggerCanvas
+    include Appboy::Endpoints::ListCanvas
 
     def export_users(**payload)
       Appboy::REST::ExportUsers.new.perform(app_group_id, payload)
@@ -34,3 +36,4 @@ module Appboy
     end
   end
 end
+
