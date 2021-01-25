@@ -3,18 +3,25 @@ require 'faraday_middleware'
 
 module Appboy
   class HTTP
+    attr_reader :api_key
+
+    def initialize(api_key)
+      @api_key = api_key
+    end
+
     def post(path, payload)
       connection.post path do |request|
         request.body = payload
       end
     end
 
-    def get(path, query)
+    def get(path, query = {})
       connection.get path, query
     end
 
     def connection
-      @connection ||= Faraday.new(url: api_host) do |connection|
+      @connection ||= Faraday.new(url: api_host,
+                                  headers: { Authorization: "Bearer #{api_key}" }) do |connection|
         connection.request :json
 
         connection.response :logger if ENV['APPBOY_DEBUG']

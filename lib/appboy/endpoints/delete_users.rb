@@ -2,7 +2,7 @@ module Appboy
   module Endpoints
     module DeleteUsers
       def delete_users(**payload)
-        delete_users_service.new(app_group_id, payload).perform
+        delete_users_service.new(api_key, payload).perform
       end
 
       private

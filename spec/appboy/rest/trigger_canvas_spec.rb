@@ -36,7 +36,6 @@ describe Appboy::REST::TriggerCanvas do
 
   def expect_send_messages_http_call
     expect(http).to receive(:post).with '/canvas/trigger/send', {
-      api_key: :api_key,
       audience: :audience,
       broadcast: :broadcast,
       canvas_id: :canvas_id,

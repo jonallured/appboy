@@ -2,14 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.appboy.com/messages/schedule
+    uri: https://api.appboy.com/messages/schedule/create
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"non-existent","segment_ids":["<APPBOY_TEST_SEGMENT>"],"send_at":"2015-02-15
-        00:00:00 -0500","deliver_in_local_timezone":false,"messages":{"apple_push":{"alert":"hello"}}}'
+      string: '{"external_user_ids":[12345],"schedule":{"time":"2020-11-12T00:00:00+02:00","in_local_time":false},"messages":{"apple_push":{"alert":"hello"}}}'
     headers:
+      Authorization:
+      - Bearer non-existent
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v1.1.0
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -21,33 +22,46 @@ http_interactions:
       code: 401
       message: Unauthorized
     headers:
-      Server:
-      - nginx/1.6.2
-      Date:
-      - Mon, 16 Feb 2015 02:04:31 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
       Connection:
       - keep-alive
-      Status:
-      - 401 Unauthorized
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      Content-Length:
+      - '69'
       Cache-Control:
       - no-cache
+      Content-Type:
+      - application/json
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      X-Ratelimit-Limit:
+      - ''
+      X-Ratelimit-Remaining:
+      - ''
+      X-Ratelimit-Reset:
+      - ''
       X-Request-Id:
-      - 4fced4dccb4363e4660606ba27c2561a
+      - 3e02877e-9d07-47f9-b0e3-dde80ba00315
       X-Runtime:
-      - '0.018142'
+      - '0.001179'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 02 Nov 2020 14:31:42 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-fty21369-FTY
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1604327502.092360,VS0,VE60
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
     body:
-      encoding: UTF-8
-      string: '{"message":"Invalid or missing App Group API Identifier: non-existent"}'
-    http_version: 
-  recorded_at: Mon, 16 Feb 2015 02:04:31 GMT
-recorded_with: VCR 2.9.2
+      encoding: ASCII-8BIT
+      string: '{"message":"Invalid API key: non-existent"}'
+  recorded_at: Mon, 02 Nov 2020 14:31:42 GMT
+recorded_with: VCR 6.0.0

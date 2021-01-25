@@ -4,15 +4,15 @@ describe Appboy::REST::ScheduleMessages do
   let(:http) { double(:http) }
 
   let(:payload) {{
-    send_at: :send_at,
-    segment_id: :segment_id,
+    time: :time,
+    external_user_ids: [:external_user_ids],
     local_timezone: :local_timezone,
     messages: :messages
   }}
 
-  let(:app_group_id) { :app_group_id }
+  let(:api_key) { :api_key }
 
-  subject { described_class.new(app_group_id, payload) }
+  subject { described_class.new(api_key, payload) }
 
   before { subject.http = http }
 
@@ -23,11 +23,12 @@ describe Appboy::REST::ScheduleMessages do
   end
 
   def expect_schedule_messages_http_call
-    expect(http).to receive(:post).with '/messages/schedule', {
-      app_group_id: app_group_id,
-      segment_ids: [:segment_id],
-      send_at: :send_at,
-      deliver_in_local_timezone: :local_timezone,
+    expect(http).to receive(:post).with '/messages/schedule/create', {
+      external_user_ids: [:external_user_ids],
+      schedule: {
+        time: :time,
+        in_local_time: :local_timezone
+      },
       messages: :messages
     }
   end

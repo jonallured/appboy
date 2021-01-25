@@ -5,10 +5,12 @@ http_interactions:
     uri: https://api.appboy.com/users/export/segment
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"<APPBOY_GROUP_ID>","segment_id":"<APPBOY_TEST_SEGMENT>","callback_endpoint":"https://example.com"}'
+      string: '{"segment_id":"<APPBOY_TEST_SEGMENT>","callback_endpoint":"https://example.com"}'
     headers:
+      Authorization:
+      - Bearer <APPBOY_API_KEY>
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v1.1.0
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -20,35 +22,49 @@ http_interactions:
       code: 201
       message: Created
     headers:
-      Server:
-      - nginx/1.6.2
-      Date:
-      - Tue, 24 Mar 2015 17:33:21 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
       Connection:
       - keep-alive
-      Status:
-      - 201 Created
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"0b603642a946afe389ef6c98459d8ba5"'
+      Content-Length:
+      - '190'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"517ec07d7db32fe4af594b7a6c4df92a"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249996'
+      X-Ratelimit-Reset:
+      - '1604113200'
       X-Request-Id:
-      - d51ea5a511c9ae34f37def7faa8c8799
+      - 8f00a345-5056-4aaf-b959-e7c2322a4f50
       X-Runtime:
-      - '0.012174'
+      - '0.081602'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 31 Oct 2020 02:48:20 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-fty21342-FTY
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1604112500.033752,VS0,VE144
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
     body:
-      encoding: UTF-8
-      string: '{"url":"https://appboy-data-export.s3.amazonaws.com/<REDACTED>.zip","message":"success"}'
-    http_version: 
-  recorded_at: Tue, 24 Mar 2015 17:33:20 GMT
-recorded_with: VCR 2.9.2
+      encoding: ASCII-8BIT
+      string: '{"object_prefix":"983b7b7b-e30e-4a8d-8a58-86807872eb9d-1604112500","url":"https://appboy-data-export.s3.amazonaws.com/OFR0gwchmOhqk5qlN530zg_nMbd_m9LYpZBgansMHP4.zip","message":"success"}'
+  recorded_at: Sat, 31 Oct 2020 02:48:20 GMT
+recorded_with: VCR 6.0.0

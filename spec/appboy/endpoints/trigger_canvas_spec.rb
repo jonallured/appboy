@@ -4,7 +4,7 @@ require 'appboy/endpoints/trigger_canvas'
 class API
   include Appboy::Endpoints::TriggerCanvas
 
-  def app_group_id
+  def api_key
     :api_key
   end
 end

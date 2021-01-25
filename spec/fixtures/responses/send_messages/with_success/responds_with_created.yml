@@ -5,10 +5,12 @@ http_interactions:
     uri: https://api.appboy.com/messages/send
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"<APPBOY_GROUP_ID>","messages":{"apple_push":{"alert":"hello"}},"external_user_ids":[1],"segment_ids":[]}'
+      string: '{"messages":{"apple_push":{"alert":"hello"}},"external_user_ids":[1],"segment_ids":[]}'
     headers:
+      Authorization:
+      - Bearer <APPBOY_API_KEY>
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v1.1.0
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -20,35 +22,49 @@ http_interactions:
       code: 201
       message: Created
     headers:
-      Server:
-      - nginx/1.6.2
-      Date:
-      - Mon, 16 Feb 2015 02:04:32 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
       Connection:
       - keep-alive
-      Status:
-      - 201 Created
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"8736cdfe08480bca66cffeee06268705"'
+      Content-Length:
+      - '94'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"a14228c1f046b931d46bcda58c84a482"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249942'
+      X-Ratelimit-Reset:
+      - '1604329200'
       X-Request-Id:
-      - dafade35dada6bc0693c1e8b39153078
+      - 78ae40ff-f122-495a-82aa-4293aabf888b
       X-Runtime:
-      - '0.007953'
+      - '0.017605'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 02 Nov 2020 14:59:09 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-pdk17835-PDK
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1604329149.197534,VS0,VE72
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
     body:
-      encoding: UTF-8
-      string: '{"message":"success"}'
-    http_version: 
-  recorded_at: Mon, 16 Feb 2015 02:04:32 GMT
-recorded_with: VCR 2.9.2
+      encoding: ASCII-8BIT
+      string: '{"dispatch_id":"70ecab38a9cf947cb98ca134fb6a5c2c","message":"success"}'
+  recorded_at: Mon, 02 Nov 2020 14:59:09 GMT
+recorded_with: VCR 6.0.0

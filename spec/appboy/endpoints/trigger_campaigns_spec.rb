@@ -4,7 +4,7 @@ require 'appboy/endpoints/trigger_campaign'
 class API
   include Appboy::Endpoints::TriggerCampaign
 
-  def app_group_id
+  def api_key
     :api_key
   end
 end

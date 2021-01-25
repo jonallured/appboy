@@ -2,14 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.appboy.com/messages/schedule
+    uri: https://api.appboy.com/messages/schedule/create
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"<APPBOY_GROUP_ID>","segment_ids":["<APPBOY_TEST_SEGMENT>"],"send_at":"2015-02-15
-        00:00:00 -0500","deliver_in_local_timezone":false,"messages":{"apple_push":{"alert":"hello"}}}'
+      string: '{"external_user_ids":[12345],"schedule":{"time":"2020-11-12T00:00:00+02:00","in_local_time":false},"messages":{"apple_push":{"alert":"hello"}}}'
     headers:
+      Authorization:
+      - Bearer <APPBOY_API_KEY>
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v1.1.0
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -21,35 +22,49 @@ http_interactions:
       code: 201
       message: Created
     headers:
-      Server:
-      - nginx/1.6.2
-      Date:
-      - Mon, 16 Feb 2015 02:04:31 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
       Connection:
       - keep-alive
-      Status:
-      - 201 Created
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"8736cdfe08480bca66cffeee06268705"'
+      Content-Length:
+      - '128'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"8d88d739d491e3c704b11a6177731477"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249967'
+      X-Ratelimit-Reset:
+      - '1604329200'
       X-Request-Id:
-      - a66956f310c2c8d642746ea807a4d1a5
+      - 951009c3-ed16-4c7e-a458-87ba79adee11
       X-Runtime:
-      - '0.026183'
+      - '0.020109'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 02 Nov 2020 14:31:40 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-fty21328-FTY
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1604327500.399224,VS0,VE79
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
     body:
-      encoding: UTF-8
-      string: '{"message":"success"}'
-    http_version: 
-  recorded_at: Mon, 16 Feb 2015 02:04:31 GMT
-recorded_with: VCR 2.9.2
+      encoding: ASCII-8BIT
+      string: '{"dispatch_id":"d1b053e8263e532c2c9349f3e4d77899","schedule_id":"09d8d8ff-2c6d-47df-9d14-90bba0096dac","message":"success"}'
+  recorded_at: Mon, 02 Nov 2020 14:31:40 GMT
+recorded_with: VCR 6.0.0

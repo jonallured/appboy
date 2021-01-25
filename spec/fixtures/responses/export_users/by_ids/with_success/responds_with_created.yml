@@ -5,10 +5,12 @@ http_interactions:
     uri: https://api.appboy.com/users/export/ids
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"<APPBOY_GROUP_ID>","external_ids":[1]}'
+      string: '{"external_ids":[1]}'
     headers:
+      Authorization:
+      - Bearer <APPBOY_API_KEY>
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v1.1.0
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -20,37 +22,49 @@ http_interactions:
       code: 201
       message: Created
     headers:
-      Server:
-      - nginx/1.6.2
-      Date:
-      - Thu, 26 Feb 2015 21:41:18 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
       Connection:
       - keep-alive
-      Status:
-      - 201 Created
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"051590a5519f8271c86bbaa59a309f47"'
+      Content-Length:
+      - '74'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"a2bffe53dd0293835943234b29bbd3ce"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249997'
+      X-Ratelimit-Reset:
+      - '1604113200'
       X-Request-Id:
-      - 25b7fb12aad1ffaea7b9f4f4752a0bec
+      - 8f13edcd-1d56-4ec4-b658-4c88f5a2cc21
       X-Runtime:
-      - '1.105644'
+      - '0.035335'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 31 Oct 2020 02:48:19 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-fty21324-FTY
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1604112499.129989,VS0,VE92
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
     body:
-      encoding: UTF-8
-      string: '{"users":[{"external_id":"1","email":"john@example.com","total_revenue":97.09,"push_subscribe":"subscribed","email_subscribe":"opted_in","custom_attributes":{"custom_attribute":"Yes","foo":"fighters","capabilities":["Rewards","Custom
-        Survey Questions","Foo","Baz","K-invite","Multi-Redemption"]},"apps":[],"custom_events":[{"name":"baz","first":"2015-02-15T00:16:33Z","last":"2015-02-16T02:04:32Z","count":19},{"name":"Does
-        something significant","first":"2015-02-20T03:28:55Z","last":"2015-02-20T03:28:55Z","count":1}],"purchases":[{"name":null,"first":"2015-02-15T00:23:08Z","last":"2015-02-20T03:34:55Z","count":21},{"name":null,"first":"2015-02-20T03:35:44Z","last":"2015-02-20T03:35:44Z","count":1}]}],"invalid_user_ids":[1],"message":"success"}'
-    http_version: 
-  recorded_at: Thu, 26 Feb 2015 21:41:18 GMT
-recorded_with: VCR 2.9.2
+      encoding: ASCII-8BIT
+      string: '{"users":[],"invalid_user_ids":[1],"message":"success"}'
+  recorded_at: Sat, 31 Oct 2020 02:48:19 GMT
+recorded_with: VCR 6.0.0

@@ -2,13 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.appboy.com/segments/list?app_group_id=<APPBOY_GROUP_ID>
+    uri: https://api.appboy.com/segments/list
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      Authorization:
+      - Bearer <APPBOY_API_KEY>
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v1.1.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -18,41 +20,67 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx/1.6.2
-      Date:
-      - Tue, 24 Mar 2015 17:00:42 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
       Connection:
       - keep-alive
-      Status:
-      - 200 OK
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"5f9d8fd4ccb0c6be554231c5db4a50ef"'
+      Content-Length:
+      - '879'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"2ca36d47d4a0ab6c97478ad8095f950d"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249965'
+      X-Ratelimit-Reset:
+      - '1604329200'
       X-Request-Id:
-      - d46d80a0252ffe2f86ea5c5e11ce8650
+      - 2e93141a-6dc3-45f0-a6c2-3b6b111a4d0d
       X-Runtime:
-      - '0.009647'
+      - '0.013175'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 02 Nov 2020 14:31:57 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-fty21336-FTY
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1604327517.931751,VS0,VE70
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
     body:
-      encoding: UTF-8
-      string: '{"segments":[{"id":"<APPBOY_TEST_SEGMENT>","name":"test","analytics_tracking_enabled":false},{"id":"<APPBOY_TEST_SEGMENT>","name":"All
-        Users (Zweet Local - iOS)","analytics_tracking_enabled":true},{"id":"<APPBOY_TEST_SEGMENT>","name":"Engaged
-        Recent Users","analytics_tracking_enabled":true},{"id":"<APPBOY_TEST_SEGMENT>","name":"User
-        Onboarding - Second Week","analytics_tracking_enabled":true},{"id":"<APPBOY_TEST_SEGMENT>","name":"User
-        Onboarding - First Week","analytics_tracking_enabled":true},{"id":"<APPBOY_TEST_SEGMENT>1","name":"Lapsed
-        Users - 30 days","analytics_tracking_enabled":true},{"id":"<APPBOY_TEST_SEGMENT>","name":"Lapsed
-        Users - 7 days","analytics_tracking_enabled":true}],"message":"success"}'
-    http_version: 
-  recorded_at: Tue, 24 Mar 2015 17:00:42 GMT
-recorded_with: VCR 2.9.2
+      encoding: ASCII-8BIT
+      string: '{"segments":[{"id":"7ca29dd9-d4cc-4107-9fad-51db7dcf608a","name":"Lapsed
+        Users - 7 days","analytics_tracking_enabled":true,"tags":[]},{"id":"2917a7a8-f105-4e0e-9254-ee21453ea1d9","name":"Lapsed
+        Users - 30 days","analytics_tracking_enabled":true,"tags":[]},{"id":"550628b7-126c-4ebf-8967-0911ba1d344a","name":"User
+        Onboarding - First Week","analytics_tracking_enabled":true,"tags":[]},{"id":"6ea9b456-76ac-47af-b51f-cb0d5b894b2e","name":"User
+        Onboarding - Second Week","analytics_tracking_enabled":true,"tags":[]},{"id":"b77d057a-118c-442d-ad79-02a85a1d0ef7","name":"Engaged
+        Recent Users","analytics_tracking_enabled":true,"tags":[]},{"id":"5b54f222-360a-4640-91bc-908b7e7046d5","name":"All
+        Users (com.prebocorp.prebo - Android)","analytics_tracking_enabled":true,"tags":[]},{"id":"a4b4d6f0-5678-4857-81c4-8e12c8bf5708","name":"All
+        Users (Prebo - iOS)","analytics_tracking_enabled":true,"tags":[]},{"id":"23049c85-a290-401b-9c7a-b869560dca49","name":"All
+        Users (PreboStaging - Android)","analytics_tracking_enabled":true,"tags":[]},{"id":"6da4622f-d2f4-49b5-a5e3-3738a185fa92","name":"All
+        Users (PreboStaging - iOS)","analytics_tracking_enabled":true,"tags":[]},{"id":"d0dd12ba-da1a-43ef-94a2-5646ec846c5a","name":"test
+        sin registrados","analytics_tracking_enabled":false,"tags":[]},{"id":"9b460567-7e53-4abc-bacd-c1a765639805","name":"Male
+        18-22","analytics_tracking_enabled":false,"tags":[]},{"id":"8e82374c-f312-4d04-a685-1281e943aabf","name":"Not
+        logged in user","analytics_tracking_enabled":false,"tags":[]},{"id":"d383da53-0f94-43cc-8421-cc165cf767bd","name":"Crear
+        unirme no apretado","analytics_tracking_enabled":false,"tags":[]},{"id":"b3f2caa2-0b06-4493-8aef-73e271b095ba","name":"chat","analytics_tracking_enabled":false,"tags":[]},{"id":"36d63ff0-bd15-40d4-a048-6bbe74053ae9","name":"rated
+        positive","analytics_tracking_enabled":false,"tags":[]},{"id":"a31a5d8c-0b8b-417e-bb56-47a388c92b01","name":"Groups
+        decreasing popularity","analytics_tracking_enabled":true,"tags":[]},{"id":"5ce49f49-d80e-4196-aa4f-481bfaf6d82b","name":"Shown
+        Groups","analytics_tracking_enabled":false,"tags":[]},{"id":"a7d33006-9c5d-4547-940d-c9e7bc24875b","name":"1
+        month active","analytics_tracking_enabled":false,"tags":[]},{"id":"207cfa86-8697-440e-ae85-de7a299ec367","name":"suscribed
+        users","analytics_tracking_enabled":false,"tags":[]},{"id":"<APPBOY_TEST_SEGMENT>","name":"test-segment","analytics_tracking_enabled":false,"tags":[]}],"message":"success"}'
+  recorded_at: Mon, 02 Nov 2020 14:31:57 GMT
+recorded_with: VCR 6.0.0

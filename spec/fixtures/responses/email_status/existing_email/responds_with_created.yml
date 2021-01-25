@@ -5,10 +5,12 @@ http_interactions:
     uri: https://api.appboy.com/email/status
     body:
       encoding: UTF-8
-      string: '{"app_group_id":"<APPBOY_GROUP_ID>","email":"john@example.com","subscription_state":"unsubscribed"}'
+      string: '{"email":"john@example.com","subscription_state":"unsubscribed"}'
     headers:
+      Authorization:
+      - Bearer <APPBOY_API_KEY>
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v1.1.0
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -20,35 +22,49 @@ http_interactions:
       code: 201
       message: Created
     headers:
-      Server:
-      - nginx/1.6.2
-      Date:
-      - Thu, 19 Feb 2015 20:42:25 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
       Connection:
       - keep-alive
-      Status:
-      - 201 Created
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"8736cdfe08480bca66cffeee06268705"'
+      Content-Length:
+      - '46'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"838a7c62adda8d131d694ae13ba2c5b7"
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=0; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Ratelimit-Limit:
+      - '250000'
+      X-Ratelimit-Remaining:
+      - '249949'
+      X-Ratelimit-Reset:
+      - '1604329200'
       X-Request-Id:
-      - 664ec9e1c8bf8666cadff79ee1a56434
+      - 1891e937-9f31-4088-8b4b-941453afbf27
       X-Runtime:
-      - '0.024496'
+      - '0.011981'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 02 Nov 2020 14:56:04 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-fty21373-FTY
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1604328964.138044,VS0,VE69
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: '{"message":"success"}'
-    http_version: 
-  recorded_at: Thu, 19 Feb 2015 20:42:24 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Mon, 02 Nov 2020 14:56:04 GMT
+recorded_with: VCR 6.0.0
