@@ -17,14 +17,12 @@ module Appboy
 
     include Appboy::Endpoints::DeleteUsers
     include Appboy::Endpoints::TrackUsers
-    include Appboy::Endpoints::DeleteUsers
     include Appboy::Endpoints::SendMessages
     include Appboy::Endpoints::ScheduleMessages
     include Appboy::Endpoints::TriggerCampaign
     include Appboy::Endpoints::TriggerCanvas
     include Appboy::Endpoints::ListCanvas
     include Appboy::Endpoints::Email
-    include Appboy::Endpoints::TriggerCampaign
     include Appboy::Endpoints::CampaignDetails
 
     def export_users(**payload)
