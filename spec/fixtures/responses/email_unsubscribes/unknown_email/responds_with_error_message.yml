@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.appboy.com/email/unsubscribes?app_group_id=%3CAPPBOY_GROUP_ID%3E&email=doesntexist@example.com
+    uri: https://api.appboy.com/email/unsubscribes?app_group_id=<APPBOY_GROUP_ID>&email=doesntexist@example.com
     body:
       encoding: US-ASCII
       string: ''
@@ -49,6 +49,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"message":"There is no user with the provided email"}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 14 Jul 2015 10:03:08 GMT
 recorded_with: VCR 2.9.3

@@ -5,7 +5,7 @@ class API
   include Appboy::Endpoints::TriggerCanvas
 
   def app_group_id
-    :api_key
+    :app_group_id
   end
 end
 
@@ -39,7 +39,7 @@ describe Appboy::Endpoints::TriggerCanvas do
 
     it 'sends a canvas message with recipients' do
       expect(api.send(:trigger_canvas_service))
-        .to receive(:new).with(:api_key, payload)
+        .to receive(:new).with(:app_group_id, payload)
 
       trigger_canvas!
     end

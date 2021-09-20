@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.appboy.com/segments/list?app_group_id=%3CAPPBOY_GROUP_ID%3E
+    uri: https://api.appboy.com/segments/list?app_group_id=<APPBOY_GROUP_ID>
     body:
       encoding: US-ASCII
       string: ''
@@ -53,6 +53,6 @@ http_interactions:
         Onboarding - First Week","analytics_tracking_enabled":true},{"id":"<APPBOY_TEST_SEGMENT>","name":"Lapsed
         Users - 30 days","analytics_tracking_enabled":true},{"id":"<APPBOY_TEST_SEGMENT>","name":"Lapsed
         Users - 7 days","analytics_tracking_enabled":true}],"message":"success"}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 24 Mar 2015 17:02:25 GMT
 recorded_with: VCR 2.9.2

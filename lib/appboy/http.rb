@@ -17,6 +17,7 @@ module Appboy
       @connection ||= Faraday.new(url: api_host) do |connection|
         connection.request :json
 
+        connection.response :json
         connection.response :logger if ENV['APPBOY_DEBUG']
 
         connection.adapter Faraday.default_adapter

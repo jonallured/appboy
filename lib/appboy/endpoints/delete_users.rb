@@ -2,13 +2,13 @@ module Appboy
   module Endpoints
     module DeleteUsers
       def delete_users(**payload)
-        delete_users_service.new(app_group_id, payload).perform
+        delete_users_service.perform(app_group_id, payload)
       end
 
       private
 
       def delete_users_service
-        Appboy::REST::DeleteUsers
+        @delete_users_service ||= Appboy::REST::DeleteUsers.new
       end
     end
   end
