@@ -9,6 +9,10 @@ module Appboy
         email_unsubscribes_service.new(app_group_id, payload).perform
       end
 
+      def email_bounce_remove(**payload)
+        email_bounce_remove_service.new(app_group_id, payload).perform
+      end
+
       private
 
       def email_unsubscribes_service
@@ -17,6 +21,10 @@ module Appboy
 
       def email_status_service
         Appboy::REST::EmailStatus
+      end
+
+      def email_bounce_remove_service
+        Appboy::REST::EmailBounceRemove
       end
     end
   end
